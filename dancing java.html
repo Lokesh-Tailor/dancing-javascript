@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>java script</h1>
+        <button>first</button>
+        <button>second</button>
+    </div>
+    <script>
+        const head = document.querySelector("h1");
+        const btn1 = document.querySelector("button:first-of-type");
+        const btn2 = document.querySelector("button:last-of-type");
+        const c = head.innerHTML;
+        let interval = ''
+
+        btn1.onclick = () => {
+            const a = head.innerHTML.split("");
+            interval = setInterval(() => {
+
+                const b = a.pop();
+                a.unshift(b)
+                head.innerHTML = a.join("");
+            }, 1000);
+        };
+        // console.log(b)
+        btn2.onclick = () => {
+            clearInterval(interval)
+            head.innerHTML = c
+        }
+
+    </script>
+
+</body>
+
+</html>
